@@ -15,3 +15,7 @@
 - Deployed `nascar-field-sync` v3 using NASCAR public CF schedule mapping.
 - Deployed `nascar-sync` v6 using NASCAR public CF live/timing endpoints and production-season scoping.
 - Added 30-minute field-sync cron; retained 1-minute live-sync cron.
+
+## RC2 note
+
+RC2 is primarily a frontend visual restoration. No scoring, settlement, draw, NASCAR automation, or production season-state logic was changed by the RC2 frontend work.

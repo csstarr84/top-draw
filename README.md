@@ -1,28 +1,24 @@
-# Top Draw Release Candidate
+# Top Draw Release Candidate 2
 
-Direct GitHub Pages build. No npm/Vite build is required.
+This release restores the approved Top Draw visual direction while preserving the validated Supabase backend and race automation.
 
-## Included
-- Supabase email/password authentication with approved-player authorization
-- Chris enabled as Commissioner for initial setup/testing
-- Dynamic email confirmation redirect to the deployed site URL
-- Live Race Board with assignments, unassigned drivers, pots, provider sync state, and live/final scores
-- Official draw rotation with Steal Ball workflow and protected completion/publish readiness
-- Season standings, Hall of Champions, career statistics, and race archive
-- Private race chat
-- Commissioner Race Control, player/login management, field review, season lifecycle controls, and settlement status
-- Expanded Supabase Realtime refresh for race state, field, assignments, draw events, steals, results, scores, money, sync status, and chat
-- Mobile-first responsive layout
+## Approved frontend direction restored
 
-## NASCAR automation
-- Race IDs and schedule mapping now come from NASCAR's public `cf.nascar.com` schedule feed.
-- Las Vegas South Point 400 is mapped to NASCAR race ID `5630`.
-- Live timing/scoring worker now uses NASCAR's public `cf.nascar.com` live-feed, live-points, and weekend-feed endpoints.
-- Field sync runs every 30 minutes and live race sync runs every minute.
-- The private `feed.nascar.com` preliminary-entry-list endpoint currently returns HTTP 401, so automatic entry-list import falls back safely without overwriting an already loaded field. The Las Vegas 36-car field is already loaded and preserved.
+- Dark motorsports / race-control presentation
+- Red, yellow, blue, black, and white racing accents
+- Race Board as the primary landing page
+- Weekly Pot, Rollover, and Season Pot presented together
+- Player garage cards with prominent car-number plates, driver names, manufacturer badges, and scoring
+- Navigation: Race Board, Live Scoring, Standings, Race Chat, History, Commissioner
+- Dedicated Draw Room retained and launched from Race Board / Commissioner workflow
+- Responsive desktop and mobile behavior
 
-## Safety
-- Only the Supabase publishable browser key is included in frontend code.
-- No Supabase service-role or secret key is present in this package.
-- Production season remains DRAFT until a Commissioner intentionally starts it.
-- Race finalization and money settlement are protected in Supabase and were tested using rollback-isolated test seasons.
+## Deployment
+
+GitHub Pages direct deployment. No npm/Vite build step is required.
+
+Upload/replace:
+- `index.html`
+- `src/main.js`
+- `src/style.css`
+- supporting markdown files
