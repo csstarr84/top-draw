@@ -90,6 +90,7 @@ const money=c=>`$${((Number(c)||0)/100).toFixed(2)}`
 function note(t,bad=false){msg.textContent=t;msg.className='msg '+(bad?'bad':'ok')}
 function playerNameById(id){return players.find(x=>x.id===id)?.display_name||'Player'}
 function seasonPlayerName(id){const sp=seasonPlayers.find(x=>x.id===id);return sp?playerNameById(sp.player_id):'Player'}
+function activeSeasonPlayers(){return seasonPlayers.filter(sp=>sp.is_active!==false&&players.find(p=>p.id===sp.player_id)?.is_active!==false)}
 async function authContext(){const {data,error}=await supabase.rpc('current_player_context');const c=data?.[0];if(error||!c)throw new Error('This account is not authorized for Top Draw.');return c}
 async function loadCore(){
  const {data:s,error:se}=await supabase.from('seasons').select('*').eq('name','2026 Logan Pilot').eq('environment','TEST').maybeSingle();if(se)throw se;season=s
