@@ -58,6 +58,50 @@
 .drivergrid.seven .drivercard:nth-child(n+4) .mfrlogo{width:44px;height:24px}
 @media(max-width:760px){.drivergrid.seven{grid-template-columns:1fr 1fr}.drivergrid.seven .drivercard:nth-child(n){grid-column:auto;grid-template-columns:68px minmax(0,1fr) 50px}.drivergrid.seven .drivercard:nth-child(n) .carnum{font-size:35px}.drivergrid.seven .drivercard:nth-child(n) .drivername{font-size:12px}}
 @media(max-width:440px){.drivergrid.seven{grid-template-columns:1fr}.drivergrid.seven .drivercard:nth-child(n){grid-column:auto}}
+
+/* APPROVED RACE BOARD LAYOUT LOCK */
+#race .playerstack{display:block;padding:0 11px}
+#race .playercard{display:block;border:1px solid #314650;border-radius:13px;background:#0a1419;overflow:hidden;margin-bottom:8px;min-height:0}
+#race .phead{height:58px;display:flex;align-items:center;border-bottom:1px solid #334852}
+#race .rank{width:80px;height:58px;flex:0 0 80px;display:grid;place-items:center;font-size:39px;font-weight:1000;font-style:italic;background:#d90a25}
+#race .playercard.p2 .rank{background:#075ab8}
+#race .playercard.p3 .rank{background:#ffc400;color:#111}
+#race .playercard.p4 .rank{background:#13ba4a}
+#race .playercard.p5 .rank{background:#7624b9}
+#race .pname{padding-left:20px;flex:1;min-width:0}
+#race .pname b{display:block;font-size:25px;line-height:1;font-style:italic;text-transform:uppercase}
+#race .pname span{font-size:15px;color:#27d0d3;font-weight:900;letter-spacing:2px}
+#race .count{padding-right:26px;font-size:20px;color:#b7c1c8;font-weight:900;white-space:nowrap}
+#race .drivergrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding:5px 12px 7px;margin:0}
+#race .drivergrid.seven{grid-template-columns:repeat(12,minmax(0,1fr))}
+#race .drivergrid.seven .drivercard:nth-child(-n+3){grid-column:span 4}
+#race .drivergrid.seven .drivercard:nth-child(n+4){grid-column:span 3;grid-template-columns:68px minmax(0,1fr) 50px}
+#race .drivergrid.seven .drivercard:nth-child(n+4) .carnum{font-size:38px}
+#race .drivergrid.seven .drivercard:nth-child(n+4) .drivername{font-size:13px}
+#race .drivergrid.seven .drivercard:nth-child(n+4) .mfrlogo{width:46px;height:25px}
+#race .drivercard{height:59px;min-height:59px;border:1px solid #3b4e59;border-radius:7px;background:linear-gradient(100deg,#071017,#101a20);display:grid;grid-template-columns:82px minmax(0,1fr) auto;align-items:center;padding:3px 10px;gap:7px;overflow:hidden}
+#race .drivername{font-size:15px;line-height:1.05;font-weight:1000;text-transform:uppercase;letter-spacing:0;padding:0}
+#race .mfrlogo{width:58px;height:29px;object-fit:contain;justify-self:end}
+#race .carart{width:74px;height:50px;object-fit:contain;justify-self:center}
+#race .carnum{font-size:43px;line-height:1;font-weight:1000;font-style:italic;text-align:center;letter-spacing:-2px}
+#race .unassigned{margin:9px 11px 0;border:1px solid #314650;border-radius:13px;background:#0a1419;padding:8px 12px 10px}
+#race .unassigned h2{margin:0 0 5px;display:flex;justify-content:space-between;align-items:center;font-size:19px;font-weight:1000;line-height:1}
+#race .unassigned h2 .rollover-label{color:#ffd31a;font-size:14px;margin-left:auto;margin-right:12px}
+#race .unassigned .drivergrid{grid-template-columns:repeat(3,minmax(0,1fr));padding:0;margin-top:5px}
+#race .unassigned .drivercard{height:55px;min-height:55px}
+@media(max-width:700px){
+ #race .playerstack{padding:0 6px}
+ #race .pname{padding-left:12px}
+ #race .pname b{font-size:21px}
+ #race .count{padding-right:10px;font-size:15px}
+ #race .drivergrid,#race .unassigned .drivergrid{grid-template-columns:1fr 1fr;padding:5px 7px 7px}
+ #race .drivergrid.seven{grid-template-columns:1fr 1fr}
+ #race .drivergrid.seven .drivercard:nth-child(n){grid-column:auto;grid-template-columns:70px minmax(0,1fr) 48px}
+ #race .drivergrid.seven .drivercard:nth-child(n) .carnum{font-size:36px}
+ #race .drivergrid.seven .drivercard:nth-child(n) .drivername{font-size:13px}
+ #race .drivergrid.seven .drivercard:nth-child(n) .mfrlogo{width:44px;height:24px}
+}
+
 </style>
 </head>
 <body>
@@ -69,7 +113,7 @@
   <div class="pots"><div><span>WEEKLY POT</span><strong id="rbWeekly">$0</strong></div><div><span>ROLLOVER</span><strong id="rbRollover">$0</strong></div><div><span>SEASON POT</span><strong id="rbSeason">$0</strong></div></div>
   <div class="boardnav"><button data-page="race" class="on">🏁 RACE BOARD</button><button data-page="standings">🏆 STANDINGS</button><button data-page="history">▤ HISTORY</button><button data-page="commish">⚙ COMMISH</button></div>
   <div id="rbPlayers" class="playerstack"><div class="rb-empty">Loading player garages…</div></div>
-  <div class="unassigned"><h2>UNASSIGNED DRIVERS <span id="rbUnassignedCount">0</span></h2><div id="rbUnassigned" class="drivergrid"></div></div>
+  <div class="unassigned"><h2>UNASSIGNED DRIVERS <span class="rollover-label">ROLLOVER ELIGIBLE</span><span id="rbUnassignedCount">0</span></h2><div id="rbUnassigned" class="drivergrid"></div></div>
 </section>
 <section id="standings" class="screen page"><div class="page-head"><div><h1>STANDINGS</h1><small id="standingsMeta"></small></div><button class="back" data-page="race">RACE BOARD</button></div><div class="mini-nav"><button data-page="live">LIVE SCORING</button><button data-page="chat">RACE CHAT</button><button data-page="history">HISTORY</button></div><div class="panel"><h2>SEASON STANDINGS</h2><div id="standingsRows" class="table"></div></div></section>
 <section id="live" class="screen page"><div class="page-head"><div><h1>LIVE SCORING</h1><small id="liveMeta">NASCAR live feed</small></div><button class="back" data-page="race">RACE BOARD</button></div><div class="mini-nav"><button data-page="standings">STANDINGS</button><button data-page="chat">RACE CHAT</button><button data-page="history">HISTORY</button></div><div id="liveStatus" class="statusline"></div><div class="panel"><h2>RUNNING ORDER</h2><div id="liveRows" class="list"></div></div><div class="panel"><h2>PLAYER RACE SCORE</h2><div id="scoreRows" class="table"></div></div></section>
@@ -116,7 +160,7 @@ async function loadRaceBoard(){
  if(!weekly&&currentRace.status!=='FINALIZED')weekly=activeSP.length*500;if(!seasonPot&&currentRace.status!=='FINALIZED')seasonPot=activeSP.length*500;
  const raceLabel=(currentRace.race_name||'').replace(/^LOGAN PILOT\s*[—-]\s*/i,'');const trackLabel=currentRace.track_name||'';document.querySelector('#rbRaceNo').textContent=String(currentRace.race_number).padStart(2,'0');document.querySelector('#rbTrack').textContent=raceLabel||trackLabel||'RACE WEEKEND';const suffixMatch=trackLabel.match(/\b(MOTOR SPEEDWAY|INTERNATIONAL SPEEDWAY|SUPERSPEEDWAY|SPEEDWAY|RACEWAY|ROAD COURSE)$/i);const trackMain=suffixMatch?trackLabel.slice(0,suffixMatch.index).trim():trackLabel;document.querySelector('#rbRaceName').innerHTML=trackMain?esc(trackMain)+(suffixMatch?`<small>${esc(suffixMatch[1])}</small>`:''):esc(raceLabel);
  const dt=currentRace.scheduled_at?new Date(currentRace.scheduled_at):null;const when=dt?dt.toLocaleString('en-US',{weekday:'long',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York',timeZoneName:'short'}).toUpperCase():'—';document.querySelector('#rbDate').textContent=(trackLabel?trackLabel.toUpperCase()+' • ':'')+when;document.querySelector('#rbWeekly').textContent=fmt(weekly);document.querySelector('#rbRollover').textContent=fmt(Math.max(0,rollover));document.querySelector('#rbSeason').textContent=fmt(seasonPot);
- document.querySelector('#rbPlayers').innerHTML=activeSP.map((sp,i)=>{const ids=assigned.get(sp.id)||[],s=sm.get(sp.id),cars=ids.map(id=>em.get(id)).filter(Boolean);return `<div class="playercard"><div class="posblock">${i+1}</div><div class="playerbody"><div class="playerhead"><div><h2>${esc(playerNameById(sp.player_id))}</h2><small>${s?.season_points??0} SEASON POINTS</small></div><div class="drivercount">${cars.length} DRIVER${cars.length===1?'':'S'}</div></div><div class="drivergrid ${cars.length===7?'seven':''}">${cars.map(e=>`<div class="drivercard">${carNumber(e)}<div class="drivername">${esc(e.nascar_drivers?.full_name||'Driver')}</div>${mfrLogo(e.manufacturer,e.manufacturer_asset_ref)}</div>`).join('')||'<div class="rb-empty" style="grid-column:1/-1">NO DRIVERS DRAWN YET</div>'}</div></div></div>`}).join('');
+ document.querySelector('#rbPlayers').innerHTML=activeSP.map((sp,i)=>{const ids=assigned.get(sp.id)||[],s=sm.get(sp.id),cars=ids.map(id=>em.get(id)).filter(Boolean);return `<div class="playercard p${i+1}"><div class="phead"><div class="rank">${i+1}</div><div class="pname"><b>${esc(playerNameById(sp.player_id))}</b><span>${s?.season_points??0} SEASON POINTS</span></div><div class="count">${cars.length} DRIVER${cars.length===1?'':'S'}</div></div><div class="drivergrid ${cars.length===7?'seven':''}">${cars.map(e=>`<div class="drivercard">${carNumber(e)}<div class="drivername">${esc(e.nascar_drivers?.full_name||'Driver')}</div>${mfrLogo(e.manufacturer,e.manufacturer_asset_ref)}</div>`).join('')||'<div class="rb-empty" style="grid-column:1/-1">NO DRIVERS DRAWN YET</div>'}</div></div>`}).join('');
  const un=entries.filter(e=>!assign.some(a=>a.race_entry_id===e.id));document.querySelector('#rbUnassignedCount').textContent=un.length;document.querySelector('#rbUnassigned').innerHTML=un.map(e=>`<div class="drivercard">${carNumber(e)}<div class="drivername">${esc(e.nascar_drivers?.full_name||'Driver')}</div>${mfrLogo(e.manufacturer,e.manufacturer_asset_ref)}</div>`).join('')||'<div class="rb-empty">NONE</div>';
  document.querySelectorAll('#race [data-page]').forEach(b=>b.onclick=()=>show(b.dataset.page));
 }
