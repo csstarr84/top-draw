@@ -64,6 +64,40 @@
 .playerstack{padding:0 11px}.playercard{height:191px;margin-bottom:8px;border-radius:13px;grid-template-columns:80px 1fr}.posblock{width:80px;font-size:39px}.playerbody{padding:0}.playerhead{height:59px;padding:0 26px 0 20px;border-bottom:1px solid #334852}.playerhead h2{font-size:25px}.playerhead small{font-size:15px}.drivercount{font-size:20px}.drivergrid{padding:5px 12px;margin:0;gap:5px}.drivergrid.seven{grid-template-columns:repeat(12,minmax(0,1fr));gap:5px}.drivercard{height:58px;min-height:58px;grid-template-columns:74px minmax(0,1fr) 52px;padding:2px 8px;gap:5px;border-radius:7px}.carnum{font-size:43px}.drivername{font-size:14px}.mfrlogo{width:50px;height:28px}.drivergrid.seven .drivercard:nth-child(n+4){grid-template-columns:60px minmax(0,1fr) 44px}.drivergrid.seven .drivercard:nth-child(n+4) .carnum{font-size:39px}.drivergrid.seven .drivercard:nth-child(n+4) .drivername{font-size:12px}.unassigned{height:95px;margin:9px 11px 0;padding:7px 12px}.unassigned h2{height:22px;margin:0;font-size:18px}.unassigned .drivergrid{grid-template-columns:repeat(3,1fr);padding:0;margin-top:4px}.unassigned .drivercard{height:54px;min-height:54px}
 }
 .money-detail-btn{position:absolute;right:10px;top:7px;padding:5px 8px;border:1px solid #596c76;border-radius:4px;background:#101a20;color:#fff;font-size:10px;letter-spacing:.6px;font-weight:1000}.pots{position:relative}.moneygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.moneybox{padding:12px;border:1px solid #344954;background:#071017;text-align:center}.moneybox small{display:block;color:#9fb0bb;font-weight:900}.moneybox b{display:block;margin-top:4px;font-size:26px;color:#ffd300}.paid{color:#7df09a}.unpaid{color:#ffb25e}.contribrow{display:grid;grid-template-columns:1.2fr .8fr .8fr .8fr auto;gap:8px;align-items:center;padding:10px;border:1px solid #344954;background:#071017}.contribrow button{padding:8px 10px;background:#086b43;border:1px solid #31d28a;color:#fff;border-radius:4px}.contribrow button:disabled{opacity:.45}.moneyhistory{display:grid;gap:6px}@media(max-width:760px){.moneygrid{grid-template-columns:1fr 1fr}.contribrow{grid-template-columns:1fr 1fr}.contribrow>*:first-child{grid-column:1/-1}.money-detail-btn{position:static;margin:4px auto 0;display:block}}
+
+/* Visual lock pass — approved 1024x1536 Race Board reference. Functional wiring unchanged. */
+@media(min-width:761px){
+.dynamic-board .weekend{height:108px;padding:8px 42px 8px 70px}
+.dynamic-board .weekend h1{font-size:38px;white-space:nowrap}
+.dynamic-board .weekend p{font-size:18px;white-space:nowrap}
+.dynamic-board .tracktag{max-width:300px;font-size:27px}
+.dynamic-board .pots{height:92px}
+.dynamic-board .boardnav{height:62px}
+.dynamic-board .playerstack{gap:8px;padding:0 11px}
+.dynamic-board .playercard{height:auto;min-height:0;margin:0;border-radius:13px;grid-template-columns:80px minmax(0,1fr)}
+.dynamic-board .posblock{width:80px;padding-top:8px;font-size:39px}
+.dynamic-board .playerbody{padding:0}
+.dynamic-board .playerhead{height:58px;min-height:58px;padding:0 16px 0 20px;align-items:center;border-bottom:1px solid #334852}
+.dynamic-board .playerhead h2{font-size:25px}
+.dynamic-board .playerhead small{font-size:15px}
+.dynamic-board .drivercount{padding-top:0;font-size:18px}
+.dynamic-board .drivergrid{padding:5px 12px;margin:0;gap:5px}
+.dynamic-board .drivergrid.seven{grid-template-columns:repeat(12,minmax(0,1fr))}
+.dynamic-board .drivergrid.seven .drivercard:nth-child(-n+3){grid-column:span 4}
+.dynamic-board .drivergrid.seven .drivercard:nth-child(n+4){grid-column:span 3}
+.dynamic-board .drivercard{height:58px;min-height:58px;grid-template-columns:74px minmax(0,1fr) 52px;padding:2px 8px;gap:5px;border-radius:7px}
+.dynamic-board .carnum{font-size:43px}
+.dynamic-board .drivername{font-size:14px}
+.dynamic-board .mfrlogo{width:50px;height:28px}
+.dynamic-board .rb-empty{min-height:38px;height:38px;margin:0;align-self:center}
+.dynamic-board .playercard:has(.rb-empty) .playerhead{height:54px;min-height:54px}
+.dynamic-board .playercard:has(.rb-empty) .drivergrid{padding:5px 12px 7px}
+.dynamic-board .unassigned{height:auto;min-height:78px;margin:9px 11px 0;padding:7px 12px}
+}
+/* Money access belongs in navigation, never over a pot heading. */
+.money-detail-btn{position:static!important;right:auto!important;top:auto!important;display:block;margin:6px 12px 8px auto;padding:6px 10px;font-size:10px}
+.dynamic-board .pots{position:static}
+
 </style>
 </head>
 <body>
@@ -72,7 +106,7 @@
 <section id="race" class="screen active dynamic-board">
   <div class="mast"><div class="nascar-mark">▰▰▰▰ <span>NASCAR</span></div><div class="topdraw">TOP DRAW</div><div class="cup">CUP SERIES RACING POOL</div><div class="racebadge">RACE<br><strong id="rbRaceNo">--</strong></div></div>
   <div class="weekend"><div><b>RACE WEEKEND</b><h1 id="rbTrack">Loading…</h1><p id="rbDate">—</p></div><div class="tracktag" id="rbRaceName">—</div></div>
-  <div class="pots"><button class="money-detail-btn" data-page="money">CONTRIBUTIONS / MONEY</button><div><span>WEEKLY POT</span><strong id="rbWeekly">$0</strong></div><div><span>ROLLOVER</span><strong id="rbRollover">$0</strong></div><div><span>SEASON POT</span><strong id="rbSeason">$0</strong></div></div>
+  <div class="pots"><div><span>WEEKLY POT</span><strong id="rbWeekly">$0</strong></div><div><span>ROLLOVER</span><strong id="rbRollover">$0</strong></div><div><span>SEASON POT</span><strong id="rbSeason">$0</strong></div></div><button class="money-detail-btn" data-page="money">CONTRIBUTIONS / MONEY</button>
   <div class="boardnav"><button data-page="race" class="on">🏁 RACE BOARD</button><button data-page="standings">🏆 STANDINGS</button><button data-page="history">▤ HISTORY</button><button data-page="commish">⚙ COMMISH</button></div>
   <div id="rbPlayers" class="playerstack"><div class="rb-empty">Loading player garages…</div></div>
   <div class="unassigned"><h2>UNASSIGNED DRIVERS <span id="rbUnassignedCount">0</span></h2><div id="rbUnassigned" class="drivergrid"></div></div>
