@@ -217,4 +217,50 @@ document.querySelector('#setup').addEventListener('click',async()=>{const e=emai
 document.querySelector('#signout').addEventListener('click',async()=>{if(realtimeChannel)await supabase.removeChannel(realtimeChannel);await supabase.auth.signOut();location.reload()})
 const {data:{session}}=await supabase.auth.getSession();if(session?.user)enter()
 </script>
-</body></html>
+</body></html><style id="approved-locked-final-pass">
+/* Final visual-only alignment to approved locked Race Board reference. */
+.dynamic-board .weekend{height:108px!important;display:flex!important;grid-template-columns:none!important;align-items:center!important;padding:8px 42px 8px 70px!important;gap:20px!important}
+.dynamic-board .weekend>div:first-child{min-width:0;flex:1 1 auto}
+.dynamic-board .weekend h1{font-size:38px!important;line-height:1!important;margin:7px 0 5px!important;white-space:nowrap!important}
+.dynamic-board .weekend p{font-size:18px!important;line-height:1.1!important;white-space:nowrap!important}
+.dynamic-board .tracktag{flex:0 0 285px;max-width:285px!important;font-size:29px!important;text-align:right!important}
+.dynamic-board .pots{height:92px!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.dynamic-board .money-detail-btn{margin:6px 12px 8px auto!important}
+.dynamic-board .boardnav{margin-top:0!important}
+.dynamic-board .playerstack{gap:8px!important;padding:0 12px!important}
+.dynamic-board .playercard{grid-template-columns:80px minmax(0,1fr)!important;height:auto!important;min-height:0!important;margin:0!important;border-radius:13px!important}
+.dynamic-board .posblock{width:80px!important;padding-top:8px!important;font-size:39px!important}
+.dynamic-board .playerhead{height:58px!important;min-height:58px!important;padding:0 16px 0 20px!important;align-items:center!important}
+.dynamic-board .playerhead h2{font-size:25px!important}
+.dynamic-board .playerhead small{font-size:15px!important}
+.dynamic-board .drivercount{font-size:20px!important}
+.dynamic-board .drivergrid{padding:5px 12px 7px!important;margin:0!important;gap:5px!important}
+.dynamic-board .drivergrid.seven{grid-template-columns:repeat(12,minmax(0,1fr))!important}
+.dynamic-board .drivergrid.seven .drivercard:nth-child(-n+3){grid-column:span 4!important}
+.dynamic-board .drivergrid.seven .drivercard:nth-child(n+4){grid-column:span 3!important}
+.dynamic-board .drivercard{height:58px!important;min-height:58px!important;grid-template-columns:74px minmax(0,1fr) 52px!important;padding:2px 8px!important;gap:5px!important;border-radius:7px!important}
+.dynamic-board .carnum{font-size:43px!important}
+.dynamic-board .drivername{font-size:14px!important}
+.dynamic-board .mfrlogo{width:50px!important;height:28px!important}
+/* Approved reference has no oversized empty garage cavity before a draw. */
+.dynamic-board .playercard:has(.rb-empty){grid-template-columns:80px minmax(0,1fr)!important}
+.dynamic-board .playercard:has(.rb-empty) .playerhead{height:58px!important;min-height:58px!important;border-bottom:0!important}
+.dynamic-board .playercard:has(.rb-empty) .drivergrid{display:none!important}
+.dynamic-board .playercard:has(.rb-empty) .posblock{min-height:58px!important}
+.dynamic-board .unassigned{height:auto!important;min-height:58px!important;margin:9px 12px 0!important;padding:7px 12px 9px!important}
+.dynamic-board .unassigned h2{height:22px!important;margin:0!important;font-size:18px!important}
+@media(max-width:760px){
+ .dynamic-board .weekend{height:auto!important;min-height:98px!important;padding:10px 15px 10px 36px!important;gap:8px!important}
+ .dynamic-board .weekend h1{font-size:25px!important;white-space:normal!important}
+ .dynamic-board .weekend p{font-size:14px!important;white-space:normal!important}
+ .dynamic-board .tracktag{flex:0 0 150px;max-width:150px!important;font-size:14px!important}
+ .dynamic-board .playercard{grid-template-columns:55px minmax(0,1fr)!important}
+ .dynamic-board .posblock{width:55px!important;font-size:31px!important}
+ .dynamic-board .playerhead h2{font-size:21px!important}
+ .dynamic-board .drivercount{font-size:13px!important}
+ .dynamic-board .drivergrid.seven{grid-template-columns:1fr 1fr!important}
+ .dynamic-board .drivergrid.seven .drivercard:nth-child(n){grid-column:auto!important}
+ .dynamic-board .drivercard{grid-template-columns:68px minmax(0,1fr) 50px!important}
+ .dynamic-board .playercard:has(.rb-empty){grid-template-columns:55px minmax(0,1fr)!important}
+}
+</style>
