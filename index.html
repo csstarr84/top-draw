@@ -131,6 +131,74 @@
 #race .tracktag small{grid-column:2;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1;font-weight:1000;letter-spacing:1.2px;font-style:italic;color:#eef2f4;white-space:nowrap}
 @media(max-width:700px){#race .tracktag{display:none}#race .drivergrid.seven .drivercard:nth-child(n){grid-template-columns:68px minmax(0,1fr) 48px}}
 
+
+/* APPROVED RACE BOARD LOCK — rebuilt from Top_Draw_Approved_Design_Local_Preview_v2 */
+#race{background:#03090d;overflow:hidden}
+#race .mast{height:174px;position:relative;background-size:cover;background-position:center top;border-bottom:2px solid #27343c}
+#race .racebadge{right:28px;top:13px;width:130px;height:128px;border:2px solid #cdd6db;border-radius:11px;background:#080d11;text-align:center;padding-top:10px;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:20px;font-weight:900;line-height:1.05}
+#race .racebadge strong{display:block;font-size:66px;font-style:italic;line-height:1}
+#race .weekend{height:109px;border-left:11px solid #ffd31a;display:flex;align-items:center;justify-content:space-between;padding:7px 58px;background:linear-gradient(90deg,#071017,#03080b);position:relative}
+#race .weekend:before{display:none}
+#race .weekend b{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:20px;letter-spacing:3px;color:#ff173b;font-style:italic}
+#race .weekend h1{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:39px;letter-spacing:.5px;margin:2px 0 2px;font-style:italic;line-height:1;text-transform:uppercase}
+#race .weekend p{margin:0;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:19px;color:#bcc6cc;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+#race .tracktag{display:flex;align-items:center;gap:10px;max-width:310px;text-align:left;color:#fff;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-style:italic;font-weight:900;line-height:.8}
+#race .tracktag:before{content:"";display:block;flex:0 0 78px;width:78px;height:58px;border-radius:50%;border:4px solid #fff;background:linear-gradient(#e62332 0 48%,#fff 48% 54%,#2b66b7 54%);position:relative;box-shadow:inset 0 0 0 1px #111}
+#race .tracktag .track-main{display:block;font-size:31px;line-height:.82}
+#race .tracktag small{display:block;font-size:13px;line-height:1;letter-spacing:1px;margin-top:5px;color:#fff}
+#race .pots{height:91px;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #31434d}
+#race .pots>div{display:grid;place-items:center;border-right:1px solid #31434d;background:linear-gradient(#0b151b,#071015);padding:7px}
+#race .pots>div:last-child{border-right:0}
+#race .pots span{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:18px;letter-spacing:2px;color:#b7c0c6;font-weight:700}
+#race .pots strong{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:42px;line-height:1;font-style:italic}
+#race .boardnav{height:63px;padding:7px 2px 8px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+#race .boardnav button{height:48px;min-height:48px;border:1px solid #344752;border-radius:5px;background:linear-gradient(#17232b,#0b141a);font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:19px;font-weight:700;letter-spacing:1px;color:#eef2f4}
+#race .boardnav button.on{background:linear-gradient(#ff173b,#dc001e);border-color:#ff3853}
+#race .playerstack{padding:0 11px}
+#race .playercard{height:191px;border:1px solid #314650;border-radius:13px;background:#0a1419;overflow:hidden;margin-bottom:8px}
+#race .phead{height:59px;display:flex;align-items:center;border-bottom:1px solid #334852}
+#race .rank{height:59px;width:80px;display:grid;place-items:center;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:39px;font-weight:700;font-style:italic;background:#d90a25}
+#race .playercard.p2 .rank{background:#075ab8}#race .playercard.p3 .rank{background:#ffc400;color:#111}#race .playercard.p4 .rank{background:#13ba4a}#race .playercard.p5 .rank{background:#7624b9}
+#race .pname{padding-left:20px;flex:1}
+#race .pname b{display:block;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:25px;line-height:1;font-style:normal;letter-spacing:.4px}
+#race .pname span{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:15px;color:#27d0d3;font-weight:700;letter-spacing:2px}
+#race .count{padding-right:26px;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:20px;color:#b7c1c8;font-weight:700}
+#race .drivergrid{padding:5px 12px 7px;display:grid;gap:5px;margin:0}
+#race .drivergrid.seven{grid-template-columns:repeat(12,minmax(0,1fr))}
+#race .drivergrid.seven .drivercard:nth-child(-n+3){grid-column:span 4}
+#race .drivergrid.seven .drivercard:nth-child(n+4){grid-column:span 3}
+#race .drivercard{height:58px;min-height:58px;border:1px solid #3b4e59;border-radius:7px;background:linear-gradient(100deg,#071017,#101a20);display:grid;grid-template-columns:74px minmax(0,1fr) 52px;align-items:center;padding:2px 8px;gap:5px;overflow:hidden}
+#race .carnum{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:43px;font-weight:700;font-style:italic;line-height:1;text-align:center;letter-spacing:-1px}
+#race .carart{max-width:68px;max-height:50px;object-fit:contain;justify-self:center}
+#race .drivername{min-width:0;padding:0;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:14px;line-height:1.02;font-weight:700;text-transform:uppercase;letter-spacing:.1px;white-space:normal;overflow-wrap:normal}
+#race .mfrlogo{justify-self:end;width:48px;height:28px;object-fit:contain}
+#race .mfrtext{justify-self:end;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:10px;font-weight:700;text-transform:uppercase}
+#race .unassigned{height:auto;min-height:95px;margin:9px 11px 0;border:1px solid #314650;border-radius:13px;background:#0a1419;padding:7px 12px 10px}
+#race .unassigned h2{height:22px;display:flex;justify-content:space-between;align-items:flex-start;margin:0;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:18px;line-height:1;font-weight:700}
+#race .unassigned h2 .rollover-label{margin-left:auto;margin-right:12px;font-size:14px;color:#ffd31a}
+#race #rbUnassignedCount{display:none}
+#race .unassigned .drivergrid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:0;margin-top:5px}
+#race .unassigned .drivercard{height:54px;min-height:54px}
+@media(max-width:700px){
+ #race .mast{height:145px;background-size:auto 145px;background-position:left top}
+ #race .racebadge{right:12px;top:10px;width:95px;height:98px;padding-top:7px;font-size:16px}
+ #race .racebadge strong{font-size:48px}
+ #race .weekend{height:auto;min-height:103px;padding:9px 16px 9px 24px;border-left-width:8px}
+ #race .weekend b{font-size:15px}#race .weekend h1{font-size:29px}#race .weekend p{font-size:14px}
+ #race .tracktag{display:none}
+ #race .boardnav{grid-template-columns:repeat(2,1fr);height:auto}
+ #race .boardnav button{font-size:14px}
+ #race .playerstack{padding:0 6px}
+ #race .playercard{height:auto;min-height:0}
+ #race .phead{height:58px}#race .rank{width:62px;height:58px;font-size:34px}#race .pname{padding-left:10px}#race .pname b{font-size:22px}#race .pname span{font-size:12px}#race .count{font-size:14px;padding-right:10px}
+ #race .drivergrid,#race .drivergrid.seven,#race .unassigned .drivergrid{grid-template-columns:1fr 1fr;padding:5px 7px 7px}
+ #race .drivergrid.seven .drivercard:nth-child(n){grid-column:auto}
+ #race .drivercard{grid-template-columns:68px minmax(0,1fr) 48px;height:58px}
+ #race .carnum{font-size:36px}#race .drivername{font-size:12px}#race .mfrlogo{width:44px;height:24px}
+ #race .unassigned{margin:8px 6px 0}
+}
+@media(max-width:440px){#race .drivergrid,#race .drivergrid.seven,#race .unassigned .drivergrid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -187,8 +255,8 @@ async function loadRaceBoard(){
  const fmt=c=>'$'+Math.round((c||0)/100); const l=ledger||[];
  let weekly=l.filter(x=>x.transaction_type==='WEEKLY_CONTRIBUTION').reduce((a,b)=>a+b.amount_cents,0);let seasonPot=l.filter(x=>x.transaction_type==='SEASON_CONTRIBUTION').reduce((a,b)=>a+b.amount_cents,0);let rollover=l.filter(x=>x.transaction_type==='WEEKLY_ROLLOVER').reduce((a,b)=>a+b.amount_cents,0)-l.filter(x=>x.transaction_type==='WEEKLY_PAYOUT').reduce((a,b)=>a+b.amount_cents,0);
  if(!weekly&&currentRace.status!=='FINALIZED')weekly=activeSP.length*500;if(!seasonPot&&currentRace.status!=='FINALIZED')seasonPot=activeSP.length*500;
- const raceLabel=(currentRace.race_name||'').replace(/^LOGAN PILOT\s*[—-]\s*/i,'');const trackLabel=currentRace.track_name||'';document.querySelector('#rbRaceNo').textContent=String(currentRace.race_number).padStart(2,'0');document.querySelector('#rbTrack').textContent=raceLabel||trackLabel||'RACE WEEKEND';const suffixMatch=trackLabel.match(/\b(MOTOR SPEEDWAY|INTERNATIONAL SPEEDWAY|SUPERSPEEDWAY|SPEEDWAY|RACEWAY|ROAD COURSE)$/i);const trackMain=suffixMatch?trackLabel.slice(0,suffixMatch.index).trim():trackLabel;document.querySelector('#rbRaceName').innerHTML=trackMain?`<span class="track-main">${esc(trackMain)}</span>${suffixMatch?`<small>${esc(suffixMatch[1])}</small>`:''}:`<span class="track-main">${esc(raceLabel)}</span>`;
- const dt=currentRace.scheduled_at?new Date(currentRace.scheduled_at):null;const when=dt?dt.toLocaleString('en-US',{weekday:'long',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York',timeZoneName:'short'}).toUpperCase():'—';document.querySelector('#rbDate').textContent=(trackLabel?trackLabel.toUpperCase()+' • ':'')+when;document.querySelector('#rbWeekly').textContent=fmt(weekly);document.querySelector('#rbRollover').textContent=fmt(Math.max(0,rollover));document.querySelector('#rbSeason').textContent=fmt(seasonPot);
+ const raceLabel=(currentRace.race_name||'').replace(/^LOGAN PILOT\s*[—-]\s*/i,'');const trackLabel=currentRace.track_name||'';document.querySelector('#rbRaceNo').textContent=String(currentRace.race_number).padStart(2,'0');document.querySelector('#rbTrack').textContent=raceLabel||trackLabel||'RACE WEEKEND';const suffixMatch=trackLabel.match(/\b(MOTOR SPEEDWAY|INTERNATIONAL SPEEDWAY|SUPERSPEEDWAY|SPEEDWAY|RACEWAY|ROAD COURSE)$/i);const trackMain=suffixMatch?trackLabel.slice(0,suffixMatch.index).trim():trackLabel;document.querySelector('#rbRaceName').innerHTML=trackMain?`<span><span class="track-main">${esc(trackMain)}</span>${suffixMatch?`<small>${esc(suffixMatch[1])}</small>`:''}</span>`:`<span><span class="track-main">${esc(raceLabel)}</span></span>`;
+ const dt=currentRace.scheduled_at?new Date(currentRace.scheduled_at):null;const when=dt?dt.toLocaleString('en-US',{weekday:'long',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York',timeZoneName:'short'}).toUpperCase():'—';document.querySelector('#rbDate').textContent=when;document.querySelector('#rbWeekly').textContent=fmt(weekly);document.querySelector('#rbRollover').textContent=fmt(Math.max(0,rollover));document.querySelector('#rbSeason').textContent=fmt(seasonPot);
  document.querySelector('#rbPlayers').innerHTML=activeSP.map((sp,i)=>{const ids=assigned.get(sp.id)||[],s=sm.get(sp.id),cars=ids.map(id=>em.get(id)).filter(Boolean);return `<div class="playercard p${i+1}"><div class="phead"><div class="rank">${i+1}</div><div class="pname"><b>${esc(playerNameById(sp.player_id))}</b><span>${s?.season_points??0} SEASON POINTS</span></div><div class="count">${cars.length} DRIVER${cars.length===1?'':'S'}</div></div><div class="drivergrid ${cars.length===7?'seven':''}">${cars.map(e=>`<div class="drivercard">${carNumber(e)}<div class="drivername">${esc(e.nascar_drivers?.full_name||'Driver')}</div>${mfrLogo(e.manufacturer,e.manufacturer_asset_ref)}</div>`).join('')||'<div class="rb-empty" style="grid-column:1/-1">NO DRIVERS DRAWN YET</div>'}</div></div>`}).join('');
  const un=entries.filter(e=>!assign.some(a=>a.race_entry_id===e.id));document.querySelector('#rbUnassignedCount').textContent=un.length;document.querySelector('#rbUnassigned').innerHTML=un.map(e=>`<div class="drivercard">${carNumber(e)}<div class="drivername">${esc(e.nascar_drivers?.full_name||'Driver')}</div>${mfrLogo(e.manufacturer,e.manufacturer_asset_ref)}</div>`).join('')||'<div class="rb-empty">NONE</div>';
  document.querySelectorAll('#race [data-page]').forEach(b=>b.onclick=()=>show(b.dataset.page));
