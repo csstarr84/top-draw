@@ -98,6 +98,44 @@
 .money-detail-btn{position:static!important;right:auto!important;top:auto!important;display:block;margin:6px 12px 8px auto;padding:6px 10px;font-size:10px}
 .dynamic-board .pots{position:static}
 
+
+/* 2026-10-06 approved-reference rebuild: presentation only. */
+@media(min-width:761px){
+.dynamic-board{padding-bottom:4px;background:#02080b}
+.dynamic-board .mast{height:174px}
+.dynamic-board .weekend{height:108px;min-height:108px;padding:10px 38px 8px 70px;border-top:1px solid #2d414c;border-bottom:1px solid #2d414c}
+.dynamic-board .weekend:before{left:41px;top:11px;bottom:11px;width:10px}
+.dynamic-board .weekend b{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:21px;letter-spacing:2px}
+.dynamic-board .weekend h1{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:39px;line-height:1.02;letter-spacing:1px;margin:4px 0 4px}
+.dynamic-board .weekend p{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:21px;line-height:1;letter-spacing:1.3px}
+.dynamic-board .tracktag{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:25px;line-height:.95;max-width:255px}
+.dynamic-board .pots{height:92px;border-bottom:1px solid #344954}
+.dynamic-board .pots>div{position:relative}
+.dynamic-board .pots span{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:20px;letter-spacing:1.5px}
+.dynamic-board .pots strong{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:44px;line-height:1}
+.dynamic-board .season-pot-cell{position:relative}
+.dynamic-board .money-detail-btn{position:absolute!important;right:8px!important;bottom:5px!important;top:auto!important;margin:0!important;padding:3px 6px!important;font-size:8px!important;line-height:1!important;letter-spacing:.45px;border-color:#52636d;background:#0b151b}
+.dynamic-board .boardnav{height:62px;padding:7px 2px;gap:5px}
+.dynamic-board .boardnav button{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:20px;letter-spacing:.8px;border-radius:6px}
+.dynamic-board .playerstack{gap:8px;padding:0 11px;margin-top:4px}
+.dynamic-board .playercard{height:190px;min-height:190px;margin:0;border-radius:13px;grid-template-columns:80px minmax(0,1fr);background:linear-gradient(90deg,#08151b,#071116)}
+.dynamic-board .posblock{width:80px;padding-top:10px;font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:43px}
+.dynamic-board .playerhead{height:58px;min-height:58px;padding:0 18px 0 20px;align-items:center}
+.dynamic-board .playerhead h2{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:26px;line-height:.9;letter-spacing:.6px}
+.dynamic-board .playerhead small{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:15px;letter-spacing:2px}
+.dynamic-board .drivercount{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:19px;letter-spacing:.5px;color:#bdc4c8}
+.dynamic-board .drivergrid{padding:5px 12px 8px;gap:5px}
+.dynamic-board .drivercard{height:58px;min-height:58px;border-radius:7px;background:linear-gradient(180deg,#0a171e,#071117);border-color:#344954}
+.dynamic-board .drivername{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:14px;line-height:.98;letter-spacing:.2px}
+.dynamic-board .empty-garage{height:58px!important;min-height:58px!important;overflow:hidden}
+.dynamic-board .empty-garage .posblock{padding-top:7px;font-size:39px}
+.dynamic-board .empty-garage .playerhead{height:58px!important;min-height:58px!important;border-bottom:0}
+.dynamic-board .empty-garage .drivergrid{display:none!important}
+.dynamic-board .empty-garage .drivercount{font-size:17px}
+.dynamic-board .unassigned{min-height:90px;margin:8px 11px 0;padding:6px 12px;border-radius:12px}
+.dynamic-board .unassigned h2{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-size:18px;letter-spacing:.4px}
+}
+
 </style>
 </head>
 <body>
@@ -106,7 +144,7 @@
 <section id="race" class="screen active dynamic-board">
   <div class="mast"><div class="nascar-mark">▰▰▰▰ <span>NASCAR</span></div><div class="topdraw">TOP DRAW</div><div class="cup">CUP SERIES RACING POOL</div><div class="racebadge">RACE<br><strong id="rbRaceNo">--</strong></div></div>
   <div class="weekend"><div><b>RACE WEEKEND</b><h1 id="rbTrack">Loading…</h1><p id="rbDate">—</p></div><div class="tracktag" id="rbRaceName">—</div></div>
-  <div class="pots"><div><span>WEEKLY POT</span><strong id="rbWeekly">$0</strong></div><div><span>ROLLOVER</span><strong id="rbRollover">$0</strong></div><div><span>SEASON POT</span><strong id="rbSeason">$0</strong></div></div><button class="money-detail-btn" data-page="money">CONTRIBUTIONS / MONEY</button>
+  <div class="pots"><div><span>WEEKLY POT</span><strong id="rbWeekly">$0</strong></div><div><span>ROLLOVER</span><strong id="rbRollover">$0</strong></div><div class="season-pot-cell"><span>SEASON POT</span><strong id="rbSeason">$0</strong><button class="money-detail-btn" data-page="money">CONTRIBUTIONS</button></div></div>
   <div class="boardnav"><button data-page="race" class="on">🏁 RACE BOARD</button><button data-page="standings">🏆 STANDINGS</button><button data-page="history">▤ HISTORY</button><button data-page="commish">⚙ COMMISH</button></div>
   <div id="rbPlayers" class="playerstack"><div class="rb-empty">Loading player garages…</div></div>
   <div class="unassigned"><h2>UNASSIGNED DRIVERS <span id="rbUnassignedCount">0</span></h2><div id="rbUnassigned" class="drivergrid"></div></div>
@@ -155,7 +193,7 @@ async function loadRaceBoard(){
  const fmt=c=>'$'+Math.round((c||0)/100);const weekly=weekPot?.current_contributions_cents||0,seasonPot=moneySum?.current_season_pot_cents||0,rollover=weekPot?.prior_rollover_cents||0;
  const raceLabel=(currentRace.race_name||'').replace(/^LOGAN PILOT\s*[—-]\s*/i,'');const trackLabel=currentRace.track_name||'';document.querySelector('#rbRaceNo').textContent=String(currentRace.race_number).padStart(2,'0');document.querySelector('#rbTrack').textContent=raceLabel||trackLabel||'RACE WEEKEND';const suffixMatch=trackLabel.match(/\b(MOTOR SPEEDWAY|INTERNATIONAL SPEEDWAY|SUPERSPEEDWAY|SPEEDWAY|RACEWAY|ROAD COURSE)$/i);const trackMain=suffixMatch?trackLabel.slice(0,suffixMatch.index).trim():trackLabel;document.querySelector('#rbRaceName').innerHTML=trackMain?esc(trackMain)+(suffixMatch?`<small>${esc(suffixMatch[1])}</small>`:''):esc(raceLabel);
  const dt=currentRace.scheduled_at?new Date(currentRace.scheduled_at):null;const when=dt?dt.toLocaleString('en-US',{weekday:'long',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York',timeZoneName:'short'}).toUpperCase():'—';document.querySelector('#rbDate').textContent=(trackLabel?trackLabel.toUpperCase()+' • ':'')+when;document.querySelector('#rbWeekly').textContent=fmt(weekly);document.querySelector('#rbRollover').textContent=fmt(Math.max(0,rollover));document.querySelector('#rbSeason').textContent=fmt(seasonPot);
- document.querySelector('#rbPlayers').innerHTML=activeSP.map((sp,i)=>{const ids=assigned.get(sp.id)||[],s=sm.get(sp.id),cars=ids.map(id=>em.get(id)).filter(Boolean);return `<div class="playercard"><div class="posblock">${i+1}</div><div class="playerbody"><div class="playerhead"><div><h2>${esc(playerNameById(sp.player_id))}</h2><small>${s?.season_points??0} SEASON POINTS</small></div><div class="drivercount">${cars.length} DRIVER${cars.length===1?'':'S'}</div></div><div class="drivergrid ${cars.length===7?'seven':''}">${cars.map(e=>`<div class="drivercard">${carNumber(e)}<div class="drivername">${esc(e.nascar_drivers?.full_name||'Driver')}</div>${mfrLogo(e.manufacturer,e.manufacturer_asset_ref)}</div>`).join('')||'<div class="rb-empty" style="grid-column:1/-1">NO DRIVERS DRAWN YET</div>'}</div></div></div>`}).join('');
+ document.querySelector('#rbPlayers').innerHTML=activeSP.map((sp,i)=>{const ids=assigned.get(sp.id)||[],s=sm.get(sp.id),cars=ids.map(id=>em.get(id)).filter(Boolean);return `<div class="playercard ${cars.length===0?'empty-garage':''}"><div class="posblock">${i+1}</div><div class="playerbody"><div class="playerhead"><div><h2>${esc(playerNameById(sp.player_id))}</h2><small>${s?.season_points??0} SEASON POINTS</small></div><div class="drivercount">${cars.length} DRIVER${cars.length===1?'':'S'}</div></div><div class="drivergrid ${cars.length===7?'seven':''}">${cars.map(e=>`<div class="drivercard">${carNumber(e)}<div class="drivername">${esc(e.nascar_drivers?.full_name||'Driver')}</div>${mfrLogo(e.manufacturer,e.manufacturer_asset_ref)}</div>`).join('')}</div></div></div>`}).join('');
  const un=entries.filter(e=>!assign.some(a=>a.race_entry_id===e.id));document.querySelector('#rbUnassignedCount').textContent=un.length;document.querySelector('#rbUnassigned').innerHTML=un.map(e=>`<div class="drivercard">${carNumber(e)}<div class="drivername">${esc(e.nascar_drivers?.full_name||'Driver')}</div>${mfrLogo(e.manufacturer,e.manufacturer_asset_ref)}</div>`).join('')||'<div class="rb-empty">NONE</div>';
  document.querySelectorAll('#race [data-page]').forEach(b=>b.onclick=()=>show(b.dataset.page));
 }
@@ -217,50 +255,4 @@ document.querySelector('#setup').addEventListener('click',async()=>{const e=emai
 document.querySelector('#signout').addEventListener('click',async()=>{if(realtimeChannel)await supabase.removeChannel(realtimeChannel);await supabase.auth.signOut();location.reload()})
 const {data:{session}}=await supabase.auth.getSession();if(session?.user)enter()
 </script>
-</body></html><style id="approved-locked-final-pass">
-/* Final visual-only alignment to approved locked Race Board reference. */
-.dynamic-board .weekend{height:108px!important;display:flex!important;grid-template-columns:none!important;align-items:center!important;padding:8px 42px 8px 70px!important;gap:20px!important}
-.dynamic-board .weekend>div:first-child{min-width:0;flex:1 1 auto}
-.dynamic-board .weekend h1{font-size:38px!important;line-height:1!important;margin:7px 0 5px!important;white-space:nowrap!important}
-.dynamic-board .weekend p{font-size:18px!important;line-height:1.1!important;white-space:nowrap!important}
-.dynamic-board .tracktag{flex:0 0 285px;max-width:285px!important;font-size:29px!important;text-align:right!important}
-.dynamic-board .pots{height:92px!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
-.dynamic-board .money-detail-btn{margin:6px 12px 8px auto!important}
-.dynamic-board .boardnav{margin-top:0!important}
-.dynamic-board .playerstack{gap:8px!important;padding:0 12px!important}
-.dynamic-board .playercard{grid-template-columns:80px minmax(0,1fr)!important;height:auto!important;min-height:0!important;margin:0!important;border-radius:13px!important}
-.dynamic-board .posblock{width:80px!important;padding-top:8px!important;font-size:39px!important}
-.dynamic-board .playerhead{height:58px!important;min-height:58px!important;padding:0 16px 0 20px!important;align-items:center!important}
-.dynamic-board .playerhead h2{font-size:25px!important}
-.dynamic-board .playerhead small{font-size:15px!important}
-.dynamic-board .drivercount{font-size:20px!important}
-.dynamic-board .drivergrid{padding:5px 12px 7px!important;margin:0!important;gap:5px!important}
-.dynamic-board .drivergrid.seven{grid-template-columns:repeat(12,minmax(0,1fr))!important}
-.dynamic-board .drivergrid.seven .drivercard:nth-child(-n+3){grid-column:span 4!important}
-.dynamic-board .drivergrid.seven .drivercard:nth-child(n+4){grid-column:span 3!important}
-.dynamic-board .drivercard{height:58px!important;min-height:58px!important;grid-template-columns:74px minmax(0,1fr) 52px!important;padding:2px 8px!important;gap:5px!important;border-radius:7px!important}
-.dynamic-board .carnum{font-size:43px!important}
-.dynamic-board .drivername{font-size:14px!important}
-.dynamic-board .mfrlogo{width:50px!important;height:28px!important}
-/* Approved reference has no oversized empty garage cavity before a draw. */
-.dynamic-board .playercard:has(.rb-empty){grid-template-columns:80px minmax(0,1fr)!important}
-.dynamic-board .playercard:has(.rb-empty) .playerhead{height:58px!important;min-height:58px!important;border-bottom:0!important}
-.dynamic-board .playercard:has(.rb-empty) .drivergrid{display:none!important}
-.dynamic-board .playercard:has(.rb-empty) .posblock{min-height:58px!important}
-.dynamic-board .unassigned{height:auto!important;min-height:58px!important;margin:9px 12px 0!important;padding:7px 12px 9px!important}
-.dynamic-board .unassigned h2{height:22px!important;margin:0!important;font-size:18px!important}
-@media(max-width:760px){
- .dynamic-board .weekend{height:auto!important;min-height:98px!important;padding:10px 15px 10px 36px!important;gap:8px!important}
- .dynamic-board .weekend h1{font-size:25px!important;white-space:normal!important}
- .dynamic-board .weekend p{font-size:14px!important;white-space:normal!important}
- .dynamic-board .tracktag{flex:0 0 150px;max-width:150px!important;font-size:14px!important}
- .dynamic-board .playercard{grid-template-columns:55px minmax(0,1fr)!important}
- .dynamic-board .posblock{width:55px!important;font-size:31px!important}
- .dynamic-board .playerhead h2{font-size:21px!important}
- .dynamic-board .drivercount{font-size:13px!important}
- .dynamic-board .drivergrid.seven{grid-template-columns:1fr 1fr!important}
- .dynamic-board .drivergrid.seven .drivercard:nth-child(n){grid-column:auto!important}
- .dynamic-board .drivercard{grid-template-columns:68px minmax(0,1fr) 50px!important}
- .dynamic-board .playercard:has(.rb-empty){grid-template-columns:55px minmax(0,1fr)!important}
-}
-</style>
+</body></html>
